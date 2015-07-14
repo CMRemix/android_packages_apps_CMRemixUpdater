@@ -37,6 +37,7 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -156,16 +157,16 @@ public class UpdatesSettings extends PreferenceActivity implements
 
         // Set 'HomeAsUp' feature of the actionbar to fit better into Settings
         if (!Utils.hasLeanback(this)) {
-          final ActionBar bar = getActionBar();
-          try {
-               bar.setDisplayHomeAsUpEnabled(true);
-          } catch(java.lang.NullPointerException ex) {
-               // YOLO
-          }
-        }
+            final ActionBar bar = getActionBar();
+            try {
+                 bar.setDisplayHomeAsUpEnabled(true);
+            } catch(java.lang.NullPointerException ex) {
+                 // YOLO
+            }
 
-        // Turn on the Options Menu
-        invalidateOptionsMenu();
+            // Turn on the Options Menu
+            invalidateOptionsMenu();
+        }
     }
 
     @Override
@@ -288,7 +289,8 @@ public class UpdatesSettings extends PreferenceActivity implements
             if (c != null) {
                 c.close();
             }
-        } else {
+        }
+        if (mDownloadId < 0 || mFileName == null) {
             resetDownloadState();
         }
 
@@ -357,6 +359,14 @@ public class UpdatesSettings extends PreferenceActivity implements
             if (progressBar == null) {
                 return;
             }
+
+            ImageView updatesButton = mDownloadingPreference.getUpdatesButton();
+            if (updatesButton == null) {
+                return;
+            }
+
+            // Enable updates button
+            updatesButton.setEnabled(true);
 
             DownloadManager.Query q = new DownloadManager.Query();
             q.setFilterById(mDownloadId);
