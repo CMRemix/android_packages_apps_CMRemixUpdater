@@ -206,14 +206,6 @@ public class UpdateCheckService extends IntentService {
         sendBroadcast(finishedIntent);
     }
 
-    private void addRequestHeaders(HttpRequestBase request) {
-        String userAgent = Utils.getUserAgentString(this);
-        if (userAgent != null) {
-            request.addHeader("User-Agent", userAgent);
-        }
-        request.addHeader("Cache-Control", "no-cache");
-    }
-
     private LinkedList<UpdateInfo> getAvailableUpdatesAndFillIntent(Intent intent) throws IOException {
         // Get the type of update we should check for
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
