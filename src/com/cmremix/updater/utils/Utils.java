@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 cmRemiX Rom
+ * Copyright (C) 2013 The CyanogenMod Project
  *
  * * Licensed under the GNU GPLv2 license
  *
