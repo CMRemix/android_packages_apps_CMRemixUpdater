@@ -7,7 +7,7 @@
      or at https://www.gnu.org/licenses/gpl-2.0.txt
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="conf_nightly_server_url" translatable="false">https://basketbuild.com/devs/Zion959/Nougat/CMRemixNightly/</string>
-    <string name="conf_release_server_url" translatable="false">https://basketbuild.com/devs/Zion959/Nougat/CMRemixStable/</string>
+    <string name="conf_nightly_server_url" translatable="false">http://romwarehouse.com/zion959/CMRemix%20Nougat/CMRemixNightly/</string>
+    <string name="conf_release_server_url" translatable="false">http://romwarehouse.com/zion959/CMRemix%20Nougat/CMRemixStable/</string>
     <bool name="alternateIsInternal">false</bool>
 </resources>
