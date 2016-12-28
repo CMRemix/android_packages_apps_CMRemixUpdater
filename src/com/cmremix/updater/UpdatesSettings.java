@@ -55,8 +55,6 @@ import com.cmremix.updater.service.UpdateCheckService;
 import com.cmremix.updater.utils.UpdateFilter;
 import com.cmremix.updater.utils.Utils;
 
-import org.cyanogenmod.internal.util.ScreenType;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
@@ -174,11 +172,6 @@ public class UpdatesSettings extends PreferenceActivity implements
 
             // Turn on the Options Menu
             invalidateOptionsMenu();
-        }
-
-        // If running on a phone, remove padding around the listview
-        if (!ScreenType.isTablet(this)) {
-            getListView().setPadding(0, 0, 0, 0);
         }
     }
 
